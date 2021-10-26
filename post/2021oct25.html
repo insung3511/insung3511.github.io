@@ -18,7 +18,7 @@
 
 				<!-- Header -->
 				<header id="header">
-					<h1><a href="index.html">About "InSung"</a></h1>
+					<h1><a href="../index.html">About "InSung"</a></h1>
 					<nav class="links">
 						<ul>
 							<li><a href="about.html">About</a></li>
@@ -96,8 +96,27 @@
 								<p>HydraNets를 통한 최종적인 결과물이다. 사진을 보면 대략적으로 어디까지 구현이 되었는지 볼 수 있다. Lane Change는 최종적인 차량 주행 방향을 의미하는 것 같고, Ego Speed는 차량 속도, time은 뭐... 총 프로그램 실행시간이 아닐까 싶고, fps는 Frame Per second 영상의 속도를 말하는 것 같다. 개인적으로 신기했던 것은 현재 자동차 객체를 3D로 받아 인식을 한다는 것인데 간단한 HD Map을 구현 가능하다는 점이다.</p>
 								<p>무튼 Andrej 팀은 이걸 개발하고 만족을 했을리가 없다. 만족을 했다면 이렇게 간단하게 설명하고 넘어갈 내용이기 아니기도 하다. HydraNets의 문제가 있었는데 Lane Prediction에서 문제가 있었다고 한다. 차량에 장착이 된 8 개의 카메라에 있는 프레임으로는 Lane Detection이 잘 된다. 하지만 가장 중요한 것은 3D Mapping이 가능한가이다. 개인적인 견해를 붙여서 말하자면 각 프레임에서 Lane Prediciton을 한다는 것은 사실 굉장히 쉬운 부분이기도 하다. 간단히 Edge Detection 만으로도 충분히 가능하다. 3D Mapping에서 문제가 생기는 이유는 다양한 이유가 있겠지만 아래 사진을 보면 비교적 이해가 쉬울 것이다.</p>
 								
-							</article>
+								<span class="image featured">
+									<img src="images/2021oct25/img5.png" alt=" " />
+								</span>
+								<p>그래서 C++로 제작을 해보았다고 하는데 사진을 보다시피 여러 대의 카메라로 Mapping을 한다. 여기서 Mapping은 2D Mapping이다. 3D Mapping이 아닌 Top-down view에서 과연 차량 주변의 물체들을 얼마나 잘 찾고 경로를 생성 할 수 있는가를 찾고자 하는 것이다. 문제는 각 카메라의 프레임 내에서는 Lane Prediciton이 잘 되지만, Top-down view 변환과정에서 제대로 된 Mapping이 되질 않는 것이다. 이는 Mapping 과정에서 하나하나 매꾸는데 시간을 굉장히 많이 잡아먹는다. 자율 주행에서는 1초의 Latency 가 발생하면 안되는데 만일 1초 이상의 Latency가 발생하여 고속도로 주행 중에 급정차한 앞 차량을 뒤늦게 Detection 한다면 사고 이어질 확률이 높다. 이런식으로 돌발 상황이 발생 할 수 있기 때문에 Latency가 굉장히 낮거나 일정 프레임 이하로 떨어지면 안된다. </p>
+								
+								<span class="image featured">
+									<img src="images/2021oct25/img7.png" alt=" " />
+								</span>
+								<p>다시 문제를 짚어보면 일단 Image에서는 처리가 잘 된다. 하지만 문제는 <strong>Vector Space에서 Mapping이 제대로 이루워지지 않는 것이다.</strong> Andrej가 말하는 문제는 다음과 같다.</p>
+								<ul>
+									<li>어떻게 Image space (Image에서 prediciton된 내용) 을 vector space로 옮길 것인가.</li>
+									<li>Vector space를 구현하기 위해서는 vector space datasets이 필요하다는 것이다.</li>
+								</ul>
+								
+								<span class="image featured">
+									<img src="images/2021oct25/img8.png" alt=" " />
+								</span>
+								<p>Andrej는 Body와 Head 사이를 <a href="https://github.com/ika-rwth-aachen/Cam2BEV">image-to-BEV</a>와 앞서 언급한 multi-camera fusion으로 채워 넣었다. </p>
+								
 
+							</article>
 					</div>
 
 				<!-- Footer -->
