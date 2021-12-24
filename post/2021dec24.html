@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Camera Calibration의 필요성에 관하여</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+	</head>
+	<body class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="../index.html">About "InSung"</a></h1>
+						<nav class="links">
+							<ul>
+								<li><a href="../about.html">About</a></li>
+								<li><a href="../lineup.html">Lineup</a></li>
+								<li><a href="https://github.com/insung3511">Github</a></li>
+								<li><address><a href="mailto:insung.park123@gmail.com">Email</a></address></li>
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Search</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+							</ul>
+						</nav>
+					</header>
+					
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<header>
+									<div class="title">
+										<h2><a href="#">Camera Calibration의 필요성에 관하여</a></h2>
+										<p>간단하면서 가장 기본적이고 필요한 내용 <strong>Camera Calibration</strong></p>
+									</div>
+									<div class="meta">
+										<time class="published" datetime="2021-12-24">December 24, 2021</time>
+										<a href="#" class="author"><span class="name">B. InSung</span><img src="../images/me.JPG" alt="" /></a>
+									</div>
+								</header>
+								<span class="image featured"><img src="images/2021nov1/index.JPG" alt="" /></span>
+								<p>12월 첫 포스팅이자 마지막 포스팅이 될 듯하다. 최근에 .NET을 공부하느라 컴퓨터 비전에 굉장히 소홀이 했다. 뭐 솔직하게 말해서 .NET 공부 보다는 노느라 바뻐서 그랬다고 해도 무방하다.</p>
+								<p>Camera Calibration의 주 목적을 알게 되면 왜 필요한지 쉽게 이해가 된다. 가장 먼저 카메라로 인해 생기는 왜곡을 찾고 카메라에서 생기는 근본적인 오류, 왜곡이 되지 않은 사진에서의 각종 정보들을 읽어오냐가 중요하다. 일단 그 전에 카메라의 왜곡에 대해서 먼저 알고 넘어가야한다.</p>
+
+								<p>주로 카메라의 왜곡현상은 크게 2개로 나눌수 있는데 가장 <strong>radial distortion</strong>가 있다. 직역하면 방사형 왜곡인데 주로 Fish-eye Lens와 같은 사진에서 생기는 왜곡이다. </p>
+								<span class="image featured">
+									<img src="images/2021dec24/img1.png" alt="" />
+								</span>
+								<p>왼쪽 No distortion을 제외한 가운데와 오른쪽 왜곡 이미지가 가장 잘 묘사했다고 생각이 된다. radial distortion은 위 사진에서 나오는 왜곡현상을 모두 의미한다. 가장 흔히 접하는 카메라 렌즈의 왜곡 현상이다. 물론 고의적으로 영상에 담겨지는 느낌이나 화각을 넓히기 위한 주 목적도 있겠지만 아무튼 왜곡은 왜곡이다.</p>
+								<span class="image featured">
+									<img src="images/2021dec24/img2.jpg" style="width: 50%; height: max; text-align: center;" alt="" />
+								</span>
+								<p></p>
+							</article>
+					</div>
+
+				<!-- Footer -->
+					<section id="footer">
+						<p class="copyright">&copy; About "Insung". Design: <a href="http://html5up.net">HTML5 UP</a>.</p>
+					</section>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
