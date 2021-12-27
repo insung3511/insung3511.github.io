@@ -103,8 +103,24 @@
 									`x_"distorted"=x+[2p_1xy+p_2(r^2+2x^2)]` <br />
 									`y_"distorted"=y+[p_1(r^2+2x^2)+2p_2xy]` <br />
 								</div> <br />
-								<p>여기서 5개의 인자값이 가장 중요한 역할을 지니고 있다. `Distortion Coefficients = (k_1, k_2, p_1, p_2, k_3)` 가 왜곡 계수(?) 와 같다. 외곡 계수라 함은</p>
+								<p>여기서 5개의 인자값이 가장 중요한 역할을 지니고 있다. `Distortion Coefficients = (k_1, k_2, p_1, p_2, k_3)` 가 왜곡 계수(?) 와 같다. 외곡 계수라 함은 카메라가 찾아야할 일종의 특징점이다. 이해가 안된다면 Camera Calibration의 목표를 다시 한번 생각하면 쉬울 것이다. 왜곡보정이 주 목표인 Camera Calibration은 여러 사진의 패턴을 분석하기 위해서는 각 사진에 특징점을 찾아 이를 분석하고 왜곡 보정을 진행해야 할 것이다. 여기서 특징 점을 분석을 하기 위한 일종의 그릇 같다. 그리고 그에 들어가는 재료나 음식들은 각 사진들의 차이점 혹은 패턴이 될 것이다.</p>
+								<p>수학적인 부분에 대해서 좀 더 얘기를 해보자. 모든 이미지는 행렬로 이루워져 있다. 실제로 OpenCV 에서 cv2.imread 함수를 통해 읽어진 사진을 Text로 출력을 하면 행렬과 같은 방식으로 출력이 된다. 그렇기에 왜곡된 이미지 또한 행렬로 처리가 되는데 이때 일반적인 내부 파라미터의 영향이 제거된 렌즈 왜곡은 <strong>Normalized Image Plane</strong> 이라고 한다. 한국어로 직역을 해도 어느정도 감은 잡힐 것이다. 이를 다시 수학식으로 표현 하면 다음과 같다.</p>
+								<div style="text-align: center;">
+									`[x_"normalized undistorted", y_"normalized undistorted"] = [[X_"central projection" / Z_"central projection"], [Y_"central projection" / Z_"central projection"]]` 
+								</div> <br />
+								<p>여러번 다른 글에서 강조를 했지만 사진은 어디 까지나 2차원이다. 3차원인 물체를 찍으면 `x, y` 축이 있는 2차원이다. 그렇기에 렌즈 왜곡이 일어나진 이미지를 3차원으로 표현을 해주면 위와 같은 식을 만들 수 있다.</p>
+
+								<p>그렇다면 왜곡이 일어난 이미지는 어떻게 수학적 모델로 표현이 되는가? 다음과 같다.</p>
+								<div style="text-align: center; height: auto; width: auto;">
+									`[x_"normalized distorted", y_"normalized distorted"] = (1 + k_1r_"undistorted"^2 + k_2*r_"undistorted"^4 + k_3r_"undistorted"^6) [x_"normalized undistorted", y_"normalized undistorted"] + [[2p_1*x_"normalized undistorted"*y_"normalized undistorted" + p_2(r^2_" undistorted" + 2x^2_"normalized undistorted")],[p_1(r^2_" undistorted" + 2y^2_"normalized undistorted") + 2p_2x_"normalized undistorted"y_"normalized undistorted"]]`
+								</div>
 							</article>
+					</div>
+					<div style="font: smaller; text-align: center; color: gray;">
+						<li>
+							<ol>참고 자료</ol>
+								<ul>https://darkpgmr.tistory.com/31</ul>
+						</li>
 					</div>
 
 				<!-- Footer -->
