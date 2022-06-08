@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
 <html>
     <head>
         <link rel="stylesheet" href="style.css">
@@ -570,8 +572,94 @@
                 chart.draw(data, options);
             }
         </script>
+
+        <!--통금과 기숙사의 연관성-->
+        <script type='text/javascript'>
+            google.charts.load('current', {'packages':['annotationchart']});
+            google.charts.setOnLoadCallback(drawChart);
+        
+            function drawChart() {
+                var data = new google.visualization.DataTable();
+                data.addColumn('date', 'Date');
+                
+                data.addColumn('number', 'Drunk Week');
+                data.addColumn('string', 'Drunk title');
+                data.addColumn('string', 'Drunk text');    
+
+                data.addColumn('number', 'School Schedule');
+                data.addColumn('string', 'Schedule title');
+                data.addColumn('string', 'Schedule text');
+
+                data.addColumn('number', 'Club/Major Event');
+                data.addColumn('string', 'Club/Major Event name')
+
+                data.addColumn('number', 'curfew Late boolean');
+                data.addColumn('string', 'curfew Late');
+
+                data.addRows([
+                    [ new Date(2022, 3, 1), 0, undefined, undefined,
+                                            0, undefined, undefined,
+                                            0, undefined,
+                                            0, undefined],
+            
+                    [ new Date(2022, 3, 10), 18, 'A Week', 'Start week of survey',
+                                             0, undefined, undefined,
+                                             1, '개강총회',
+                                             2, '통금에 늦음'],
+            
+                    [ new Date(2022, 3, 17), 10, 'B Week', 'Second week of survey',
+                                             1,  'Mid-Term Week', 'D-7 before Mid-Term test week',
+                                             0, undefined,
+                                             2, '통금에 늦음'],
+            
+                    [ new Date(2022, 3, 25), 16, 'C Week', 'Third week of survey',
+                                             1,  'Mid-Term Week', 'Start of Mid-Term Test week',
+                                             0, undefined,
+                                             4, '통금에 늦음'],
+            
+                    [ new Date(2022, 4, 1),  23, 'D Week', 'Fourth week of survey',
+                                             0, undefined, undefined,
+                                             0, undefined,
+                                             3, '통금에 늦음'],
+            
+                    [ new Date(2022, 4, 8),  16, 'E Week', 'Fifth week of survey',
+                                             0, undefined, undefined,
+                                             1, '학과 간담회 및 학과 축제',
+                                             4, '통금에 늦음'],
+            
+                    [ new Date(2022, 4, 15), 14, 'F Week', 'Sixth week of survey',
+                                             0, undefined, undefined,
+                                             1, '전공박람회',
+                                             2, '통금에 늦음'],
+            
+                    [ new Date(2022, 4, 22), 13, 'G Week', 'Seventh week of survey',
+                                             0, undefined, undefined,
+                                             1, 'CODA 정기공연 및 자연과학대학교 축제',
+                                             4, '통금에 늦음'],
+            
+                    [ new Date(2022, 4, 29), 5, 'H Week', 'Eighth week of survey',
+                                             0, undefined, undefined,
+                                             0, undefined,
+                                             3, '통금에 늦음'],
+            
+                    [ new Date(2022, 5, 5), 14, 'I Week',  'Ninth week of survey',
+                                            1, 'Final-Term Week', 'D-7 before Final Term test',
+                                            0, undefined,
+                                            1, '통금에 늦음']
+                ]);
+            
+                var chart = new google.visualization.AnnotationChart(document.getElementById('curfew_with_drunk'));
+            
+                var options = {
+                  displayAnnotations: true
+                };
+            
+                chart.draw(data, options);
+            }
+        </script>
     </head>
     <body>
+        <hr>
         <div>
             <ul>
                 <li> <h2>음주 빈번도 및 날짜</h2> </li>
@@ -581,17 +669,48 @@
             </ul>
         </div>
 
+        <hr>
         <div>
             <h2>학사 일정과 음주 주간의 연관성 확인</h2>
             <div id="schedule_with_drunk" style="width: 900px; height: 600px;"></div>
-        </div>
 
+            <ul>
+                <li><h2>각 주와 요일의 연관성</h2></li>
+            </ul>
+            <ul style="list-style-type: square;">
+                <p id="prob_data">    
+                    <li>A Week : 개강총회</li>
+                    <li>B Week : 중간고사 1주일 전</li>
+                    <li>C Week : 중간고사 기간</li>
+                    <li>D Week : NaN </li>
+                    <li>E Week : 학과 간담회 및 학과 축제</li>
+                    <LI>F Week : 전공박람회</LI>
+                    <li>G Week : CODA 정기공연 및 자연과학대학교 축제</li>
+                    <li>H Week : NaN</li>
+                    <li>I Week : 기말고사 1주일 전</li>
+                </p>
+            </ul>
+            <div id="stack_chart_div" style="height: 400px;"></div>
+        </div>
+        
+        <hr>
         <div>
             <ul>
                 <li> <h2>기숙사와 음주 빈번도의 연관성</h2> </li>
                 <div id="piechart_3d" style="width: 500px; height: 270px;"></div>
             </ul>
         </div>
+
+        <hr>
+        <div id="prob_data">
+            <div id="curfew_with_drunk" style="width: 900px; height: 600px;"></div>
+            <ul>
+                <li><p>통금과의 연관성에 관해서는 공식적인 행사로 인해서 술 자리를 갖게 되는 경우에는 통금에 늦게 들어가는 경우가 낮은 것으로 보이나, 개인적인 사례 혹은 학과 행사 및 동아리 행사가 있는 날에는 통금에 늦는 것으로 보였다. </p></li>
+                <li><p>이는 가설 중 하나인 "<i>통금이 없는 기숙사생은 술 문화에 더더욱 많은 시간을 할애하는가?</i>" 의 거짓 이라는 결론에 도달하게 된다. 조사대상 중에 통금이 없는 학생일수록 술 자리에 참여 하는 횟수가 많았으며 반대로 통금이 없는 학생일수록 술 자리 참여율이 낮다는 것을 보여주었다. 여러 요소가 있을 수 있으나 가장 크게는 개인적인 취향 등 여러 요인이 있을 것이라고 생각은 되나 이를 어떻게 배제할지를 몰라 고민중이다?</p></li>
+            </ul>
+        </div>
+
+        <hr>
         <div id="prob_data">
             <ul>
                 <li> <h2>데이터 수집의 문제</h2> </li>
@@ -600,13 +719,6 @@
                 그로 인해 원하는 데이터를 구하지 못함과 동시에 제대로 된 통계를 구하지 못함.</p>
 
                 <p>추가적으로 옳은 데이터를 구하기 위해서는 더 많은 사람의 데이터를 구해야 했으나 그러지 못한 점이 큰 문제가 되었다고 판단된다.</p>
-            </ul>
-        </div>
-
-        <div>
-            <ul>
-                <li><h2>각 주와 요일의 연관성</h2></li>
-                <div id="stack_chart_div" style="height: 400px;"></div>
             </ul>
         </div>
     </body>

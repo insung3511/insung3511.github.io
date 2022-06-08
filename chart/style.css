@@ -10,6 +10,14 @@ div {
     font-weight: 500;
 }
 
+hr {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+}
+
 #prob_data {
     font-family: 'Noto Sans KR', sans-serif;
     font-weight: 100;
