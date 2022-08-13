@@ -4,7 +4,7 @@
     <head>
         <link rel="stylesheet" href="style.css">
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-        
+
         <!--일주일간 식사 시간 외의 술 마신 횟수-->
         <script type="text/javascript">
             google.charts.load("current", {packages:["calendar"]});
@@ -13,7 +13,7 @@
                 var dataTable = new google.visualization.DataTable();
                 dataTable.addColumn({ type: 'date', id: 'Date' });
                 dataTable.addColumn({ type: 'number', id: 'Won/Loss' });
-                
+
                 dataTable.addRows([
                     // A Week
                     [ new Date(2022, 3, 10), 23 ],
@@ -51,7 +51,7 @@
                     [ new Date(2022, 4, 6),  25 ],
                     [ new Date(2022, 4, 7),  25 ],
 
-                    // E Week 
+                    // E Week
                     [ new Date(2022, 4, 8),  17 ],
                     [ new Date(2022, 4, 9),  17 ],
                     [ new Date(2022, 4, 10),  17 ],
@@ -123,7 +123,7 @@
                 var dataTable = new google.visualization.DataTable();
                 dataTable.addColumn({ type: 'date', id: 'Date' });
                 dataTable.addColumn({ type: 'number', id: 'Won/Loss' });
-                
+
                 dataTable.addRows([
                     // A Week
                     [ new Date(2022, 3, 10), 18 ],
@@ -169,7 +169,7 @@
                     [ new Date(2022, 4, 12), 16 ],
                     [ new Date(2022, 4, 13), 16 ],
                     [ new Date(2022, 4, 14), 16 ],
-                    
+
                     // F Week
                     [ new Date(2022, 4, 15), 14 ],
                     [ new Date(2022, 4, 16), 14 ],
@@ -196,7 +196,7 @@
                     [ new Date(2022, 5,  2), 5 ],
                     [ new Date(2022, 5,  3), 5 ],
                     [ new Date(2022, 5,  4), 5 ],
-                    
+
                     // I Week
                     [ new Date(2022, 5, 5), 14 ],
                     [ new Date(2022, 5, 6), 14 ],
@@ -232,7 +232,7 @@
                 var dataTable = new google.visualization.DataTable();
                 dataTable.addColumn({ type: 'date', id: 'Date' });
                 dataTable.addColumn({ type: 'number', id: 'Won/Loss' });
-                
+
                 dataTable.addRows([
                     // A Week
                     [ new Date(2022, 3, 4), 2 ],
@@ -249,14 +249,14 @@
                     [ new Date(2022, 3, 14), 1 ],
                     [ new Date(2022, 3, 16), 5 ],
                     [ new Date(2022, 3, 17), 2 ],
-                    
+
                     // C Week
                     [ new Date(2022, 3, 19), 1 ],
                     [ new Date(2022, 3, 21), 4 ],
                     [ new Date(2022, 3, 22), 4 ],
                     [ new Date(2022, 3, 23), 4 ],
                     [ new Date(2022, 3, 24), 5 ],
-                    
+
                     // D Week
                     [ new Date(2022, 3, 25), 6 ],
                     [ new Date(2022, 3, 26), 2 ],
@@ -265,7 +265,7 @@
                     [ new Date(2022, 3, 29), 1 ],
                     [ new Date(2022, 3, 30), 4 ],
                     [ new Date(2022, 4, 1),  5 ],
-                    
+
                     // E Week
                     [ new Date(2022, 4, 2),  1 ],
                     [ new Date(2022, 4, 3),  4 ],
@@ -273,7 +273,7 @@
                     [ new Date(2022, 4, 6),  3 ],
                     [ new Date(2022, 4, 7),  3 ],
                     [ new Date(2022, 4, 8),  3 ],
-                    
+
                     // F Week
                     [ new Date(2022, 4, 9),  1 ],
                     [ new Date(2022, 4, 10), 5 ],
@@ -282,7 +282,7 @@
                     [ new Date(2022, 4, 13), 4 ],
                     [ new Date(2022, 4, 14), 3 ],
                     [ new Date(2022, 4, 15), 2 ],
-                    
+
                     // G Week
                     [ new Date(2022, 4, 16), 3 ],
                     [ new Date(2022, 4, 17), 2 ],
@@ -291,14 +291,14 @@
                     [ new Date(2022, 4, 20), 4 ],
                     [ new Date(2022, 4, 21), 2 ],
                     [ new Date(2022, 4, 22), 1 ],
-                    
+
                     // H Week
                     [ new Date(2022, 4, 25), 1 ],
                     [ new Date(2022, 4, 26), 1 ],
                     [ new Date(2022, 4, 27), 2 ],
                     [ new Date(2022, 4, 28), 1 ],
                     [ new Date(2022, 4, 29), 2 ],
-                    
+
                     // I Week
                     [ new Date(2022, 4, 30), 1 ],
                     [ new Date(2022, 4, 31), 2 ],
@@ -330,14 +330,14 @@
         <script type='text/javascript'>
             google.charts.load('current', {'packages':['annotationchart']});
             google.charts.setOnLoadCallback(drawChart);
-    
+
             function drawChart() {
                 var data = new google.visualization.DataTable();
                 data.addColumn('date', 'Date');
-                
+
                 data.addColumn('number', 'Drunk Week');
                 data.addColumn('string', 'Drunk title');
-                data.addColumn('string', 'Drunk text');    
+                data.addColumn('string', 'Drunk text');
 
                 data.addColumn('number', 'School Schedule');
                 data.addColumn('string', 'Schedule title');
@@ -403,71 +403,71 @@
         <script type='text/javascript'>
             google.charts.load('current', {'packages':['annotationchart']});
             google.charts.setOnLoadCallback(drawChart);
-        
+
             function drawChart() {
                 var data = new google.visualization.DataTable();
                 data.addColumn('date', 'Date');
 
                 data.addColumn('number', 'Drunk Week');
                 data.addColumn('string', 'Drunk title');
-                data.addColumn('string', 'Drunk text');    
-            
+                data.addColumn('string', 'Drunk text');
+
                 data.addColumn('number', 'School Schedule');
                 data.addColumn('string', 'Schedule title');
                 data.addColumn('string', 'Schedule text');
-            
+
                 data.addColumn('number', 'Club/Major Event');
                 data.addColumn('string', 'Club/Major Event name')
-            
+
                 data.addRows([
                     [ new Date(2022, 3, 1), 0, undefined, undefined,
                                             0, undefined, undefined,
                                             0, undefined],
-            
+
                     [ new Date(2022, 3, 10), 18, 'A Week', 'Start week of survey',
                                              0, undefined, undefined,
                                              1, '개강총회'],
-            
+
                     [ new Date(2022, 3, 17), 10, 'B Week', 'Second week of survey',
                                              1,  'Mid-Term Week', 'D-7 before Mid-Term test week',
                                              0, undefined],
-            
+
                     [ new Date(2022, 3, 25), 16, 'C Week', 'Third week of survey',
                                              1,  'Mid-Term Week', 'Start of Mid-Term Test week',
                                              0, undefined],
-            
+
                     [ new Date(2022, 4, 1),  23, 'D Week', 'Fourth week of survey',
                                              0, undefined, undefined,
                                              0, undefined],
-            
+
                     [ new Date(2022, 4, 8),  16, 'E Week', 'Fifth week of survey',
                                              0, undefined, undefined,
                                              1, '학과 간담회 및 학과 축제'],
-            
+
                     [ new Date(2022, 4, 15), 14, 'F Week', 'Sixth week of survey',
                                              0, undefined, undefined,
                                              1, '전공박람회'],
-            
+
                     [ new Date(2022, 4, 22), 13, 'G Week', 'Seventh week of survey',
                                              0, undefined, undefined,
                                              1, 'CODA 정기공연 및 자연과학대학교 축제'],
-            
+
                     [ new Date(2022, 4, 29), 5, 'H Week', 'Eighth week of survey',
                                              0, undefined, undefined,
                                              0, undefined],
-            
+
                     [ new Date(2022, 5, 5), 14, 'I Week',  'Ninth week of survey',
                                             1, 'Final-Term Week', 'D-7 before Final Term test',
                                             0, undefined],
-            
+
                 ]);
-            
+
                 var chart = new google.visualization.AnnotationChart(document.getElementById('schedule_with_drunk'));
-            
+
                 var options = {
                   displayAnnotations: true
                 };
-            
+
                 chart.draw(data, options);
             }
         </script>
@@ -503,12 +503,12 @@
                     ['그렇다', 14],
                     ['아니다', 19]
                 ]);
-            
+
                 var options = {
                     title: "기숙사 통금에 제때 들어가지 못한 것은 술로 인한 것이다.",
                     is3D: true
                 };
-            
+
                 var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
                 chart.draw(data, options);
             }
@@ -525,21 +525,21 @@
                     ['아니다', 14],
                     ['기숙사생이 아님 혹은 통금이 없음', 39]
                 ]);
-            
+
                 var options = {
                     title: "근 1주일간 통금 시간 내에 들어갔는가?",
                     is3D: true
                 };
-            
+
                 var chart = new google.visualization.PieChart(document.getElementById('curfew_dorm_a_week'));
                 chart.draw(data, options);
             }
         </script>
-        
+
         <!--각 주와 요일에 따른 술의 빈번도-->
         <script type="text/javascript">
             google.charts.load('current', {packages: ['corechart', 'bar']});
-            google.charts.setOnLoadCallback(drawMultSeries);            
+            google.charts.setOnLoadCallback(drawMultSeries);
 
             function drawMultSeries() {
                 var data = google.visualization.arrayToDataTable([
@@ -553,7 +553,7 @@
                     ['G Week', 1, 3, 3, 2, 1, 3, 2],
                     ['H Week', 2, 0, 0, 1, 1, 2, 1],
                     ['I Week', 0, 1, 2, 2, 2, 4, 2]
-                ]);           
+                ]);
                 var options = {
                     title: '각 주와 요일에 따른 술의 빈번도',
                     chartArea: {width: '50%'},
@@ -567,7 +567,7 @@
                     },
 
                     isStacked: true
-                };            
+                };
                 var chart = new google.visualization.BarChart(document.getElementById('stack_chart_div'));
                 chart.draw(data, options);
             }
@@ -577,14 +577,14 @@
         <script type='text/javascript'>
             google.charts.load('current', {'packages':['annotationchart']});
             google.charts.setOnLoadCallback(drawChart);
-        
+
             function drawChart() {
                 var data = new google.visualization.DataTable();
                 data.addColumn('date', 'Date');
-                
+
                 data.addColumn('number', 'Drunk Week');
                 data.addColumn('string', 'Drunk title');
-                data.addColumn('string', 'Drunk text');    
+                data.addColumn('string', 'Drunk text');
 
                 data.addColumn('number', 'School Schedule');
                 data.addColumn('string', 'Schedule title');
@@ -601,59 +601,59 @@
                                             0, undefined, undefined,
                                             0, undefined,
                                             0, undefined],
-            
+
                     [ new Date(2022, 3, 10), 18, 'A Week', 'Start week of survey',
                                              0, undefined, undefined,
                                              1, '개강총회',
                                              2, '통금에 늦음'],
-            
+
                     [ new Date(2022, 3, 17), 10, 'B Week', 'Second week of survey',
                                              1,  'Mid-Term Week', 'D-7 before Mid-Term test week',
                                              0, undefined,
                                              2, '통금에 늦음'],
-            
+
                     [ new Date(2022, 3, 25), 16, 'C Week', 'Third week of survey',
                                              1,  'Mid-Term Week', 'Start of Mid-Term Test week',
                                              0, undefined,
                                              4, '통금에 늦음'],
-            
+
                     [ new Date(2022, 4, 1),  23, 'D Week', 'Fourth week of survey',
                                              0, undefined, undefined,
                                              0, undefined,
                                              3, '통금에 늦음'],
-            
+
                     [ new Date(2022, 4, 8),  16, 'E Week', 'Fifth week of survey',
                                              0, undefined, undefined,
                                              1, '학과 간담회 및 학과 축제',
                                              4, '통금에 늦음'],
-            
+
                     [ new Date(2022, 4, 15), 14, 'F Week', 'Sixth week of survey',
                                              0, undefined, undefined,
                                              1, '전공박람회',
                                              2, '통금에 늦음'],
-            
+
                     [ new Date(2022, 4, 22), 13, 'G Week', 'Seventh week of survey',
                                              0, undefined, undefined,
                                              1, 'CODA 정기공연 및 자연과학대학교 축제',
                                              4, '통금에 늦음'],
-            
+
                     [ new Date(2022, 4, 29), 5, 'H Week', 'Eighth week of survey',
                                              0, undefined, undefined,
                                              0, undefined,
                                              3, '통금에 늦음'],
-            
+
                     [ new Date(2022, 5, 5), 14, 'I Week',  'Ninth week of survey',
                                             1, 'Final-Term Week', 'D-7 before Final Term test',
                                             0, undefined,
                                             1, '통금에 늦음']
                 ]);
-            
+
                 var chart = new google.visualization.AnnotationChart(document.getElementById('curfew_with_drunk'));
-            
+
                 var options = {
                   displayAnnotations: true
                 };
-            
+
                 chart.draw(data, options);
             }
         </script>
@@ -678,7 +678,7 @@
                 <li><h2>각 주와 요일의 연관성</h2></li>
             </ul>
             <ul style="list-style-type: square;">
-                <p id="prob_data">    
+                <p id="prob_data">
                     <li>A Week : 개강총회</li>
                     <li>B Week : 중간고사 1주일 전</li>
                     <li>C Week : 중간고사 기간</li>
@@ -692,7 +692,7 @@
             </ul>
             <div id="stack_chart_div" style="height: 400px;"></div>
         </div>
-        
+
         <hr>
         <div>
             <ul>
