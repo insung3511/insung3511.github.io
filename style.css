@@ -25,6 +25,16 @@ body {
     background-color: #B08BBB;
 }
 
+#info_div {
+    text-align: center;
+    margin: 0;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.margin_block {
+    margin: 23;
+}
+
 .no_margin {
     margin: 0;
 }
