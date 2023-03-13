@@ -11,6 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: subosito/flutter-action@v1
-      - uses: erickzanardo/flutter-gh-pages@v3
+      - uses: erickzanardo/flutter-gh-pages@v7
         with:
-          baseHref: /my_page/
+          # baseHref: /insung3511.github.io/
+          workingDir: /insung3511.github.io/
