@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "NEED HOPE STUDY 1주차"
-date:   2023-03-20 14:05:29 +0900
+title: "NEED HOPE STUDY 1주차"
+date: 2023-03-20 14:05:29 +0900
 categories: need_hope_study
 ---
 
